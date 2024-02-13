@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateDto } from './dto';
 import { Repository } from 'typeorm';
 import { Magazine } from 'src/entities';
@@ -31,7 +31,10 @@ export class MagazinesService {
   }
 
   async delete(id: number): Promise<void> {
-    await this.magazineRepository.delete(id);
+    const deleteResponse = await this.magazineRepository.softDelete(id);
+    if (!deleteResponse.affected) {
+      throw new NotFoundException('Magazine does not exist!');
+    }
   }
 
 

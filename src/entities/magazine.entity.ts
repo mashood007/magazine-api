@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, DeleteDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Subscription } from "./subscription.entity";
 
 @Entity()
 export class Magazine {
@@ -19,4 +20,10 @@ export class Magazine {
 
   @Column({ default: 0 })
   price: number
+
+  @OneToMany(() => Subscription, subscription => subscription.magazine)
+  subscriptions: Subscription[];
+
+  @DeleteDateColumn()
+  deletedAt: Date;
 }
