@@ -13,41 +13,6 @@ Magazines API
 - passport-jwt with argon2
 - jest
 
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-
-# swagger
-$ use localhost:3000/api
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
 ## Modules
 
 There are two type of users as follows
@@ -63,4 +28,47 @@ There are two type of users as follows
 - Users( id, name, email, password<encrypted>)
 - Magazines( id, title, description, price)
 - Subscriptions (id, user, magazine, startDate, endDate, cost)
+
+
+# Backend Features
+- CRUD operations for managing magazines
+- Subscription management (Subscribe, Cancel Subscription)
+- Properly formatted code using design principles and patterns
+- Unit test cases for robustness and reliability
+- Public repository: GitHub Repository
+# Frontend Features
+- View list of all magazines
+- Subscribe to a magazine
+- Cancel subscription
+- View all subscriptions (current and past)
+
+# How to Run the Project Locally
+```
+# Clone the Repository
+$ git clone https://github.com/mashood007/magazine-api
+```
+
+## Backend setup
+
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+
+# swagger
+$ use localhost:3000/api
+```
+
+## Front end setup
+```bash
+# install package
+$ npm install
+# start app
+$ npm run dev
+```
 
